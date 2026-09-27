@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#b8ae5f">
+<title>Expediente CH/BR-00 — CHALETEO</title>
+<style>
+:root{--paper:#c5bd75;--paper-light:#ded79a;--ink:#29281c;--muted:#59563f;--red:#9c2822;--line:rgba(40,38,25,.28);--shadow:rgba(13,12,8,.27)}
+*{box-sizing:border-box}
+html{background:#777148}
+body{margin:0;min-height:100vh;color:var(--ink);font-family:"Courier New",Courier,monospace;background:radial-gradient(ellipse at 50% 10%,#ded79a 0,#c4bb70 56%,#a99f59 100%);}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.16;background:repeating-linear-gradient(0deg,transparent 0 3px,rgba(28,25,12,.12) 4px,transparent 5px);mix-blend-mode:multiply;z-index:3}
+.wrap{width:min(920px,calc(100% - 30px));margin:30px auto 48px;position:relative;background:linear-gradient(135deg,rgba(255,255,220,.18),transparent 38%),var(--paper);padding:clamp(20px,5vw,52px);box-shadow:0 20px 60px var(--shadow);border:1px solid rgba(35,33,19,.4)}
+.wrap:after{content:"";position:absolute;inset:9px;border:1px solid rgba(35,33,19,.19);pointer-events:none}
+.topline,.meta,.section-label,.footer,.stamps{font-size:11px;letter-spacing:.12em;text-transform:uppercase}
+.topline{display:flex;justify-content:space-between;gap:12px;border-bottom:1px solid var(--line);padding-bottom:11px;color:var(--muted)}
+.status-light{display:inline-block;width:8px;height:8px;border-radius:50%;background:#a3241d;box-shadow:0 0 10px #a3241d;vertical-align:middle;margin-right:7px;animation:pulse 1.8s infinite}
+@keyframes pulse{50%{opacity:.3;box-shadow:none}}
+.header{padding:42px 0 27px;border-bottom:2px solid var(--ink);position:relative}
+.kicker{font-size:12px;letter-spacing:.23em;text-transform:uppercase;color:var(--red);font-weight:bold}
+h1{font-size:clamp(35px,8vw,72px);line-height:.92;letter-spacing:-.07em;margin:15px 0 10px;text-transform:uppercase;max-width:720px}
+.subtitle{font-size:clamp(13px,2vw,17px);letter-spacing:.12em;text-transform:uppercase;max-width:580px;line-height:1.6}
+.stamp{position:absolute;right:0;top:45px;transform:rotate(7deg);border:3px double var(--red);color:var(--red);font-size:12px;font-weight:bold;letter-spacing:.16em;padding:8px 12px;text-align:center;opacity:.86}
+.meta{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-bottom:1px solid var(--line)}
+.meta div{padding:15px 10px 15px 0;border-right:1px solid var(--line)}.meta div+div{padding-left:14px}.meta div:last-child{border:0}
+.meta b{display:block;margin-top:6px;font-size:13px;letter-spacing:.02em;color:var(--ink)}
+main{display:grid;grid-template-columns:1.25fr .75fr;gap:34px;padding:30px 0}
+section{margin-bottom:27px}.section-label{font-weight:bold;color:var(--red);margin-bottom:9px}p{font-size:14px;line-height:1.72;margin:0 0 11px}.quote{border-left:3px solid var(--red);padding:10px 14px;background:rgba(40,38,25,.055);font-size:16px;font-weight:bold;line-height:1.5}
+.box{border:1px solid var(--line);padding:17px;background:rgba(238,231,171,.22)}
+.box h2{font-size:14px;letter-spacing:.1em;text-transform:uppercase;margin:0 0 13px}
+ul{padding-left:18px;margin:0}li{font-size:13px;line-height:1.65;margin:0 0 7px}
+.alert{margin:4px 0 26px;padding:15px 17px;border:1px solid var(--red);color:#501d18;background:rgba(156,40,34,.06);font-size:13px;line-height:1.65}
+button{font:inherit;cursor:pointer;background:var(--ink);color:var(--paper-light);border:0;padding:12px 15px;text-transform:uppercase;letter-spacing:.08em;font-size:11px}
+button:hover{background:var(--red)}
+#annex{display:none;margin-top:13px;padding:15px;border:1px dashed var(--red);font-size:13px;line-height:1.65;background:rgba(156,40,34,.045)}
+.footer{border-top:1px solid var(--ink);padding-top:13px;display:flex;justify-content:space-between;gap:15px;color:var(--muted);font-size:10px}
+@media(max-width:640px){.wrap{margin:10px auto 24px;padding:24px 20px}.topline{font-size:9px}.stamp{position:relative;top:auto;right:auto;display:inline-block;margin-top:10px;transform:rotate(-4deg)}.header{padding-top:25px}.meta{grid-template-columns:1fr 1fr}.meta div:nth-child(2){border-right:0}.meta div:nth-child(3){padding-left:0;border-top:1px solid var(--line)}.meta div:nth-child(4){border-top:1px solid var(--line)}main{grid-template-columns:1fr;gap:4px}.footer{flex-direction:column}}
+</style>
+</head>
+<body>
+<article class="wrap">
+  <div class="topline"><span><i class="status-light"></i>Archivo de localización CHALETEO</span><span>Acceso restringido · CH/BR-00</span></div>
+  <header class="header">
+    <div class="kicker">Expediente de incidencia · Halloween</div>
+    <h1>Zona no<br>registrada</h1>
+    <div class="subtitle">Registro de una estancia anómala detectada durante la preparación de CHALETEO.</div>
+    <div class="stamp">Copia<br>recuperada</div>
+  </header>
+  <div class="meta">
+    <div>Identificador<b>CH / BR-00</b></div>
+    <div>Localización<b>Área del cenador</b></div>
+    <div>Clasificación<b>Nivel 0</b></div>
+    <div>Estado<b>Acceso habilitado</b></div>
+  </div>
+  <main>
+    <div>
+      <section>
+        <div class="section-label">01 · Hallazgo</div>
+        <p>Durante la inspección previa a CHALETEO Halloween se detectó, en el área del cenador, un espacio que no figuraba en el registro inicial. La zona presenta paredes amarillentas, un patrón repetido y una distribución que parece continuar más allá de sus límites visibles.</p>
+        <p>El equipo la ha identificado provisionalmente como <strong>Backrooms — Nivel 0</strong>. Su origen sigue sin determinarse.</p>
+      </section>
+      <section>
+        <div class="section-label">02 · Observación de campo</div>
+        <div class="quote">«La pared del fondo parece la misma que acabamos de dejar atrás.»</div>
+      </section>
+      <section>
+        <div class="section-label">03 · Nota de archivo</div>
+        <p>La zona Backrooms es una instalación temática dentro de la celebración de Halloween CHALETEO. El resto del chalet permanece destinado a la fiesta.</p>
+      </section>
+    </div>
+    <aside>
+      <div class="box">
+        <h2>Protocolo de acceso</h2>
+        <ul>
+          <li>Entra solo cuando la zona esté abierta.</li>
+          <li>Sigue las señales y no corras.</li>
+          <li>Mantén libre el paso de entrada y salida.</li>
+          <li>Si quieres salir, vuelve por el recorrido señalizado.</li>
+        </ul>
+      </div>
+      <div class="alert"><strong>AVISO:</strong> La ambientación es ficticia. Respeta las indicaciones reales del espacio y del anfitrión.</div>
+      <button id="open" type="button" aria-expanded="false" aria-controls="annex">Consultar anexo recuperado +</button>
+      <div id="annex" role="note">ANEXO 00-B<br>La señal amarilla apareció después de cerrar el expediente. No consta en la fotografía original.<br><br>Última anotación: <strong>«No todas las salidas llevan al exterior.»</strong></div>
+    </aside>
+  </main>
+  <div class="footer"><span>CHALETEO HALLOWEEN · Archivo de ficción</span><span>CH/BR-00 · Fin del registro</span></div>
+</article>
+<script>
+const button=document.getElementById('open');const annex=document.getElementById('annex');
+button.addEventListener('click',()=>{const show=annex.style.display!=='block';annex.style.display=show?'block':'none';button.setAttribute('aria-expanded',String(show));button.textContent=show?'Cerrar anexo −':'Consultar anexo recuperado +';});
+</script>
+</body>
+</html>
