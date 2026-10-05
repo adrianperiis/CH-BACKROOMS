@@ -1,94 +1,459 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#b8ae5f">
-<title>Expediente CH/BR-00 — CHALETEO</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="theme-color" content="#121004" />
+<title>Backrooms</title>
 <style>
-:root{--paper:#c5bd75;--paper-light:#ded79a;--ink:#29281c;--muted:#59563f;--red:#9c2822;--line:rgba(40,38,25,.28);--shadow:rgba(13,12,8,.27)}
-*{box-sizing:border-box}
-html{background:#777148}
-body{margin:0;min-height:100vh;color:var(--ink);font-family:"Courier New",Courier,monospace;background:radial-gradient(ellipse at 50% 10%,#ded79a 0,#c4bb70 56%,#a99f59 100%);}
-body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.16;background:repeating-linear-gradient(0deg,transparent 0 3px,rgba(28,25,12,.12) 4px,transparent 5px);mix-blend-mode:multiply;z-index:3}
-.wrap{width:min(920px,calc(100% - 30px));margin:30px auto 48px;position:relative;background:linear-gradient(135deg,rgba(255,255,220,.18),transparent 38%),var(--paper);padding:clamp(20px,5vw,52px);box-shadow:0 20px 60px var(--shadow);border:1px solid rgba(35,33,19,.4)}
-.wrap:after{content:"";position:absolute;inset:9px;border:1px solid rgba(35,33,19,.19);pointer-events:none}
-.topline,.meta,.section-label,.footer,.stamps{font-size:11px;letter-spacing:.12em;text-transform:uppercase}
-.topline{display:flex;justify-content:space-between;gap:12px;border-bottom:1px solid var(--line);padding-bottom:11px;color:var(--muted)}
-.status-light{display:inline-block;width:8px;height:8px;border-radius:50%;background:#a3241d;box-shadow:0 0 10px #a3241d;vertical-align:middle;margin-right:7px;animation:pulse 1.8s infinite}
-@keyframes pulse{50%{opacity:.3;box-shadow:none}}
-.header{padding:42px 0 27px;border-bottom:2px solid var(--ink);position:relative}
-.kicker{font-size:12px;letter-spacing:.23em;text-transform:uppercase;color:var(--red);font-weight:bold}
-h1{font-size:clamp(35px,8vw,72px);line-height:.92;letter-spacing:-.07em;margin:15px 0 10px;text-transform:uppercase;max-width:720px}
-.subtitle{font-size:clamp(13px,2vw,17px);letter-spacing:.12em;text-transform:uppercase;max-width:580px;line-height:1.6}
-.stamp{position:absolute;right:0;top:45px;transform:rotate(7deg);border:3px double var(--red);color:var(--red);font-size:12px;font-weight:bold;letter-spacing:.16em;padding:8px 12px;text-align:center;opacity:.86}
-.meta{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-bottom:1px solid var(--line)}
-.meta div{padding:15px 10px 15px 0;border-right:1px solid var(--line)}.meta div+div{padding-left:14px}.meta div:last-child{border:0}
-.meta b{display:block;margin-top:6px;font-size:13px;letter-spacing:.02em;color:var(--ink)}
-main{display:grid;grid-template-columns:1.25fr .75fr;gap:34px;padding:30px 0}
-section{margin-bottom:27px}.section-label{font-weight:bold;color:var(--red);margin-bottom:9px}p{font-size:14px;line-height:1.72;margin:0 0 11px}.quote{border-left:3px solid var(--red);padding:10px 14px;background:rgba(40,38,25,.055);font-size:16px;font-weight:bold;line-height:1.5}
-.box{border:1px solid var(--line);padding:17px;background:rgba(238,231,171,.22)}
-.box h2{font-size:14px;letter-spacing:.1em;text-transform:uppercase;margin:0 0 13px}
-ul{padding-left:18px;margin:0}li{font-size:13px;line-height:1.65;margin:0 0 7px}
-.alert{margin:4px 0 26px;padding:15px 17px;border:1px solid var(--red);color:#501d18;background:rgba(156,40,34,.06);font-size:13px;line-height:1.65}
-button{font:inherit;cursor:pointer;background:var(--ink);color:var(--paper-light);border:0;padding:12px 15px;text-transform:uppercase;letter-spacing:.08em;font-size:11px}
-button:hover{background:var(--red)}
-#annex{display:none;margin-top:13px;padding:15px;border:1px dashed var(--red);font-size:13px;line-height:1.65;background:rgba(156,40,34,.045)}
-.footer{border-top:1px solid var(--ink);padding-top:13px;display:flex;justify-content:space-between;gap:15px;color:var(--muted);font-size:10px}
-@media(max-width:640px){.wrap{margin:10px auto 24px;padding:24px 20px}.topline{font-size:9px}.stamp{position:relative;top:auto;right:auto;display:inline-block;margin-top:10px;transform:rotate(-4deg)}.header{padding-top:25px}.meta{grid-template-columns:1fr 1fr}.meta div:nth-child(2){border-right:0}.meta div:nth-child(3){padding-left:0;border-top:1px solid var(--line)}.meta div:nth-child(4){border-top:1px solid var(--line)}main{grid-template-columns:1fr;gap:4px}.footer{flex-direction:column}}
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: #0e0d05;
+  }
+
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+  }
+
+  #app {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100dvh;
+    overflow: hidden;
+    background: #0e0d05;
+  }
+
+  /* Background photo */
+  #scene {
+    position: absolute;
+    inset: -4%;
+    width: 108%;
+    height: 108%;
+    background:
+      linear-gradient(rgba(0,0,0,.08), rgba(0,0,0,.14)),
+      url("./backrooms.jpg") center center / cover no-repeat;
+    filter: saturate(.84) contrast(1.03) brightness(.92) sepia(.12) hue-rotate(-8deg);
+    transform-origin: center center;
+    animation: drift 14s ease-in-out infinite alternate;
+  }
+
+  @keyframes drift {
+    0%   { transform: scale(1.06) translate3d(-0.7%, -0.35%, 0); }
+    50%  { transform: scale(1.08) translate3d(0.25%, 0.15%, 0); }
+    100% { transform: scale(1.065) translate3d(-0.15%, 0.35%, 0); }
+  }
+
+  /* Yellow fluorescent wash */
+  #lightWash {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background:
+      radial-gradient(ellipse at 28% 16%, rgba(255,250,170,.09) 0 10%, transparent 28%),
+      radial-gradient(ellipse at 51% 13%, rgba(255,248,155,.12) 0 9%, transparent 24%),
+      radial-gradient(ellipse at 74% 18%, rgba(255,249,171,.08) 0 7%, transparent 22%),
+      linear-gradient(to bottom, rgba(255,240,129,.06), rgba(92,76,18,.13));
+    mix-blend-mode: screen;
+    opacity: .8;
+    transition: opacity 40ms linear;
+  }
+
+  /* VHS / CCTV noise */
+  #noise {
+    position: absolute;
+    inset: -20%;
+    pointer-events: none;
+    opacity: .14;
+    mix-blend-mode: overlay;
+    background-image:
+      repeating-linear-gradient(
+        to bottom,
+        rgba(255,255,255,.025) 0px,
+        rgba(255,255,255,.025) 1px,
+        rgba(0,0,0,.02) 2px,
+        rgba(0,0,0,.02) 4px
+      ),
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180' viewBox='0 0 180 180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.75'/%3E%3C/svg%3E");
+    animation: noiseShift .16s steps(2,end) infinite;
+  }
+
+  @keyframes noiseShift {
+    0%   { transform: translate3d(-1.4%, -1.1%, 0); }
+    25%  { transform: translate3d(.8%, -1.3%, 0); }
+    50%  { transform: translate3d(-.5%, .7%, 0); }
+    75%  { transform: translate3d(1.1%, .15%, 0); }
+    100% { transform: translate3d(-1%, 1%, 0); }
+  }
+
+  #vignette {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    box-shadow:
+      inset 0 0 18vmin rgba(5,4,0,.46),
+      inset 0 0 5vmin rgba(0,0,0,.22);
+  }
+
+  #flicker {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: rgba(255,245,155,.1);
+    mix-blend-mode: screen;
+    opacity: 0;
+    transition: opacity 32ms linear;
+  }
+
+  #blackout {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: #040400;
+    opacity: 0;
+    transition: opacity 42ms linear;
+  }
+
+  #glitch {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: inherit;
+    opacity: 0;
+    mix-blend-mode: screen;
+  }
+
+  #gate {
+    position: absolute;
+    inset: 0;
+    z-index: 50;
+    display: grid;
+    place-items: center;
+    background:
+      radial-gradient(circle at 50% 45%, rgba(74,65,18,.16), transparent 38%),
+      #050502;
+    color: #d4d0a3;
+    cursor: pointer;
+    transition: opacity .8s ease, visibility .8s ease;
+  }
+
+  #gate.hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+
+  .gate-inner {
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: .28em;
+    animation: gatePulse 2.2s ease-in-out infinite;
+  }
+
+  .gate-title {
+    font-size: clamp(22px, 3.5vw, 44px);
+    text-shadow: 0 0 15px rgba(255,245,171,.13);
+  }
+
+  .gate-sub {
+    margin-top: 14px;
+    font-size: clamp(8px, 1vw, 12px);
+    opacity: .46;
+    letter-spacing: .22em;
+  }
+
+  @keyframes gatePulse {
+    0%, 100% { opacity: .56; }
+    50% { opacity: .96; }
+  }
+
+  #hint {
+    position: absolute;
+    right: 16px;
+    bottom: 12px;
+    z-index: 10;
+    color: rgba(255,255,210,.18);
+    font-size: 10px;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 1s ease;
+  }
+  #hint.show { opacity: 1; }
+
+  @media (max-width: 700px) {
+    #scene { inset: -7%; width: 114%; height: 114%; }
+    #noise { opacity: .11; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    #scene, #noise, .gate-inner { animation: none !important; }
+  }
 </style>
 </head>
 <body>
-<article class="wrap">
-  <div class="topline"><span><i class="status-light"></i>Archivo de localización CHALETEO</span><span>Acceso restringido · CH/BR-00</span></div>
-  <header class="header">
-    <div class="kicker">Expediente de incidencia · Halloween</div>
-    <h1>Zona no<br>registrada</h1>
-    <div class="subtitle">Registro de una estancia anómala detectada durante la preparación de CHALETEO.</div>
-    <div class="stamp">Copia<br>recuperada</div>
-  </header>
-  <div class="meta">
-    <div>Identificador<b>CH / BR-00</b></div>
-    <div>Localización<b>Área del cenador</b></div>
-    <div>Clasificación<b>Nivel 0</b></div>
-    <div>Estado<b>Acceso habilitado</b></div>
-  </div>
-  <main>
-    <div>
-      <section>
-        <div class="section-label">01 · Hallazgo</div>
-        <p>Durante la inspección previa a CHALETEO Halloween se detectó, en el área del cenador, un espacio que no figuraba en el registro inicial. La zona presenta paredes amarillentas, un patrón repetido y una distribución que parece continuar más allá de sus límites visibles.</p>
-        <p>El equipo la ha identificado provisionalmente como <strong>Backrooms — Nivel 0</strong>. Su origen sigue sin determinarse.</p>
-      </section>
-      <section>
-        <div class="section-label">02 · Observación de campo</div>
-        <div class="quote">«La pared del fondo parece la misma que acabamos de dejar atrás.»</div>
-      </section>
-      <section>
-        <div class="section-label">03 · Nota de archivo</div>
-        <p>La zona Backrooms es una instalación temática dentro de la celebración de Halloween CHALETEO. El resto del chalet permanece destinado a la fiesta.</p>
-      </section>
+<div id="app">
+  <div id="scene"></div>
+  <div id="lightWash"></div>
+  <div id="flicker"></div>
+  <div id="noise"></div>
+  <div id="vignette"></div>
+  <div id="blackout"></div>
+
+  <div id="gate" role="button" tabindex="0" aria-label="Entrar">
+    <div class="gate-inner">
+      <div class="gate-title">ENTER</div>
+      <div class="gate-sub">sound required</div>
     </div>
-    <aside>
-      <div class="box">
-        <h2>Protocolo de acceso</h2>
-        <ul>
-          <li>Entra solo cuando la zona esté abierta.</li>
-          <li>Sigue las señales y no corras.</li>
-          <li>Mantén libre el paso de entrada y salida.</li>
-          <li>Si quieres salir, vuelve por el recorrido señalizado.</li>
-        </ul>
-      </div>
-      <div class="alert"><strong>AVISO:</strong> La ambientación es ficticia. Respeta las indicaciones reales del espacio y del anfitrión.</div>
-      <button id="open" type="button" aria-expanded="false" aria-controls="annex">Consultar anexo recuperado +</button>
-      <div id="annex" role="note">ANEXO 00-B<br>La señal amarilla apareció después de cerrar el expediente. No consta en la fotografía original.<br><br>Última anotación: <strong>«No todas las salidas llevan al exterior.»</strong></div>
-    </aside>
-  </main>
-  <div class="footer"><span>CHALETEO HALLOWEEN · Archivo de ficción</span><span>CH/BR-00 · Fin del registro</span></div>
-</article>
+  </div>
+
+  <audio id="distantSong" src="./distant_memory.mp3" preload="auto" loop playsinline></audio>
+<div id="hint">click / tap to toggle sound</div>
+</div>
+
 <script>
-const button=document.getElementById('open');const annex=document.getElementById('annex');
-button.addEventListener('click',()=>{const show=annex.style.display!=='block';annex.style.display=show?'block':'none';button.setAttribute('aria-expanded',String(show));button.textContent=show?'Cerrar anexo −':'Consultar anexo recuperado +';});
+(() => {
+  const gate = document.getElementById('gate');
+  const scene = document.getElementById('scene');
+  const flicker = document.getElementById('flicker');
+  const blackout = document.getElementById('blackout');
+  const lightWash = document.getElementById('lightWash');
+  const hint = document.getElementById('hint');
+  const distantSong = document.getElementById('distantSong');
+
+  let ctx = null;
+  let master = null;
+  let humA, humB, hiss, hissFilter;
+  let started = false;
+  let audioOn = false;
+
+  function createNoiseBuffer(context, seconds = 2.4) {
+    const sr = context.sampleRate;
+    const buffer = context.createBuffer(1, sr * seconds, sr);
+    const data = buffer.getChannelData(0);
+    for (let i = 0; i < data.length; i++) {
+      data[i] = (Math.random() * 2 - 1) * 0.5;
+    }
+    return buffer;
+  }
+
+  function ensureAudio() {
+    if (ctx) {
+      if (ctx.state === 'suspended') ctx.resume();
+      master.gain.setTargetAtTime(0.34, ctx.currentTime, 0.06);
+      audioOn = true;
+      return;
+    }
+
+    ctx = new (window.AudioContext || window.webkitAudioContext)();
+    master = ctx.createGain();
+    master.gain.value = 0.34;
+    master.connect(ctx.destination);
+
+    humA = ctx.createOscillator();
+    humA.type = 'sine';
+    humA.frequency.value = 50;
+    const humAG = ctx.createGain();
+    humAG.gain.value = 0.026;
+    humA.connect(humAG).connect(master);
+
+    humB = ctx.createOscillator();
+    humB.type = 'sawtooth';
+    humB.frequency.value = 100.2;
+    const humBG = ctx.createGain();
+    humBG.gain.value = 0.0105;
+    humB.connect(humBG).connect(master);
+
+    hiss = ctx.createBufferSource();
+    hiss.buffer = createNoiseBuffer(ctx);
+    hiss.loop = true;
+
+    hissFilter = ctx.createBiquadFilter();
+    hissFilter.type = 'bandpass';
+    hissFilter.frequency.value = 3600;
+    hissFilter.Q.value = 2.0;
+    const hissG = ctx.createGain();
+    hissG.gain.value = 0.014;
+
+    hiss.connect(hissFilter).connect(hissG).connect(master);
+
+    humA.start();
+    humB.start();
+    hiss.start();
+
+    setInterval(() => {
+      if (!ctx) return;
+      const now = ctx.currentTime;
+      humB.frequency.cancelScheduledValues(now);
+      humB.frequency.linearRampToValueAtTime(99.2 + Math.random() * 2.2, now + 2.2);
+      hissFilter.frequency.linearRampToValueAtTime(2900 + Math.random() * 1800, now + 2.5);
+    }, 2600);
+
+    audioOn = true;
+  }
+
+  function electricalTick() {
+    if (!ctx || !audioOn) return;
+    const osc = ctx.createOscillator();
+    const gain = ctx.createGain();
+    const filt = ctx.createBiquadFilter();
+
+    osc.type = Math.random() > .5 ? 'square' : 'sawtooth';
+    osc.frequency.value = 900 + Math.random() * 2400;
+
+    filt.type = 'highpass';
+    filt.frequency.value = 700;
+
+    const now = ctx.currentTime;
+    gain.gain.setValueAtTime(0.0001, now);
+    gain.gain.exponentialRampToValueAtTime(0.015 + Math.random() * 0.02, now + 0.004);
+    gain.gain.exponentialRampToValueAtTime(0.0001, now + 0.04 + Math.random() * 0.06);
+
+    osc.connect(filt).connect(gain).connect(master);
+    osc.start(now);
+    osc.stop(now + 0.14);
+  }
+
+  function toggleAudio() {
+    if (!ctx) {
+      ensureAudio();
+      distantSong.volume = 0.68;
+      distantSong.play().catch(() => {});
+      return;
+    }
+
+    audioOn = !audioOn;
+    master.gain.setTargetAtTime(audioOn ? 0.34 : 0.0001, ctx.currentTime, 0.045);
+
+    if (audioOn) {
+      distantSong.play().catch(() => {});
+    } else {
+      distantSong.pause();
+    }
+  }
+
+  function microShake(power = 1.0, duration = 120) {
+    const start = performance.now();
+    const base = 1.07;
+
+    function frame(now) {
+      const elapsed = now - start;
+      if (elapsed >= duration) {
+        scene.style.transform = '';
+        return;
+      }
+      const dx = (Math.random() - 0.5) * 1.2 * power;
+      const dy = (Math.random() - 0.5) * 1.2 * power;
+      const rot = (Math.random() - 0.5) * 0.22 * power;
+      scene.style.transform = `scale(${base}) translate(${dx}%, ${dy}%) rotate(${rot}deg)`;
+      requestAnimationFrame(frame);
+    }
+    requestAnimationFrame(frame);
+  }
+
+  function randomFlicker() {
+    const chance = Math.random();
+
+    if (chance < 0.16) {
+      flicker.style.opacity = (0.14 + Math.random() * 0.3).toFixed(2);
+      lightWash.style.opacity = (0.4 + Math.random() * 0.28).toFixed(2);
+      if (Math.random() < 0.55) microShake(0.9, 70 + Math.random() * 90);
+      electricalTick();
+
+      setTimeout(() => {
+        flicker.style.opacity = '0';
+        lightWash.style.opacity = '.8';
+      }, 35 + Math.random() * 70);
+
+      if (Math.random() < 0.3) {
+        setTimeout(() => {
+          flicker.style.opacity = '.18';
+          if (Math.random() < 0.5) microShake(1.1, 60);
+          electricalTick();
+          setTimeout(() => flicker.style.opacity = '0', 28 + Math.random() * 35);
+        }, 80 + Math.random() * 130);
+      }
+    }
+
+    if (chance > 0.988) {
+      blackout.style.opacity = '.68';
+      microShake(1.4, 120);
+      if (ctx && audioOn) {
+        master.gain.setTargetAtTime(0.08, ctx.currentTime, 0.018);
+        setTimeout(() => {
+          if (ctx && audioOn) master.gain.setTargetAtTime(0.34, ctx.currentTime, 0.05);
+        }, 180 + Math.random() * 220);
+      }
+      setTimeout(() => {
+        blackout.style.opacity = '0';
+        electricalTick();
+      }, 130 + Math.random() * 260);
+    }
+
+    setTimeout(randomFlicker, 90 + Math.random() * 450);
+  }
+
+  async function enter() {
+    if (started) return;
+    started = true;
+    ensureAudio();
+
+    // Reproducción directa del archivo: más compatible con Chrome, Firefox, Safari y móvil.
+    distantSong.volume = 0.68;
+    distantSong.currentTime = 0;
+    try {
+      await distantSong.play();
+    } catch (err) {
+      console.warn('No se pudo iniciar la canción:', err);
+    }
+
+    gate.classList.add('hidden');
+    document.body.style.cursor = 'none';
+
+    try {
+      if (document.documentElement.requestFullscreen) {
+        await document.documentElement.requestFullscreen();
+      }
+    } catch (_) {}
+
+    setTimeout(() => {
+      hint.classList.add('show');
+      setTimeout(() => hint.classList.remove('show'), 3600);
+    }, 900);
+
+    randomFlicker();
+  }
+
+  gate.addEventListener('click', enter);
+  gate.addEventListener('keydown', e => {
+    if (e.key === 'Enter' || e.key === ' ') enter();
+  });
+
+  document.getElementById('app').addEventListener('pointerdown', () => {
+    if (!started || !gate.classList.contains('hidden')) return;
+    toggleAudio();
+  });
+
+  document.addEventListener('visibilitychange', () => {
+    if (!ctx) return;
+
+    if (document.hidden) {
+      ctx.suspend();
+      distantSong.pause();
+    } else if (audioOn) {
+      ctx.resume();
+      distantSong.play().catch(() => {});
+    }
+  });
+})();
 </script>
 </body>
 </html>
